@@ -1,0 +1,322 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 48px 16px 40px;
+    gap: 24px;
+}
+
+
+.heading h1 {
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+    text-align: center;
+}
+
+
+.searchbar {
+    width: min(100%, 480px);
+    height: 58px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 7px 7px 4px;
+
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1.5px solid rgba(255, 255, 255, 0.45);
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.13),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.searchbar:focus-within {
+    border-color: rgba(255, 255, 255, 0.75);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.18),
+        0 0 0 3px rgba(255, 255, 255, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+#cityInput {
+    flex: 1;
+    height: 100%;
+    padding: 0 16px;
+
+    border: none;
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 12px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.95rem;
+    color: #1a1a2e;
+    font-weight: 400;
+
+    transition: background 0.2s ease;
+}
+
+#cityInput::placeholder {
+    color: #999;
+    font-weight: 300;
+}
+
+#cityInput:focus {
+    background: #fff;
+}
+
+#searchButton {
+    flex-shrink: 0;
+    height: 100%;
+    padding: 0 22px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #0984e3, #0667b3);
+    color: #fff;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+    box-shadow: 0 3px 12px rgba(6, 103, 179, 0.4);
+}
+
+#searchButton:hover {
+    background: linear-gradient(135deg, #0775ca, #054e8a);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(6, 103, 179, 0.45);
+}
+
+#searchButton:active {
+    transform: scale(0.96) translateY(0);
+    box-shadow: 0 2px 8px rgba(6, 103, 179, 0.3);
+}
+
+
+.weather-card {
+    width: min(100%, 420px);
+    padding: 32px 28px 28px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1.5px solid rgba(255, 255, 255, 0.38);
+    border-radius: 28px;
+
+    box-shadow:
+        0 16px 48px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+    color: #fff;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+
+.weathericon {
+    margin-bottom: 4px;
+}
+
+.weathericon img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.2));
+}
+
+.temperature h2 {
+    font-size: clamp(3rem, 10vw, 4rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
+}
+
+.description p {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.88;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+}
+
+
+.cityname h3 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    margin-top: 2px;
+}
+
+.weather-card::after {
+    content: '';
+    display: block;
+    width: 80%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 12px 0 4px;
+    align-self: center;
+}
+
+.lowerpart {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 4px;
+}
+
+.humidity,
+.windspeed {
+    flex: 1;
+    padding: 16px 12px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.13);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.humidity:hover,
+.windspeed:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.humidity p,
+.windspeed p {
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    opacity: 0.75;
+    margin-bottom: 6px;
+}
+
+.humidity span,
+.windspeed span {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+
+@media (max-width: 480px) {
+    main {
+        padding: 36px 14px 32px;
+        gap: 20px;
+    }
+
+    .searchbar {
+        height: 52px;
+        border-radius: 15px;
+        padding: 6px 6px 6px 4px;
+    }
+
+    #cityInput {
+        font-size: 0.9rem;
+        padding: 0 12px;
+    }
+
+    #searchButton {
+        padding: 0 16px;
+        font-size: 0.85rem;
+        border-radius: 10px;
+    }
+
+    .weather-card {
+        padding: 26px 20px 22px;
+        border-radius: 22px;
+        gap: 4px;
+    }
+
+    .weathericon img {
+        width: 84px;
+        height: 84px;
+    }
+
+    .lowerpart {
+        gap: 10px;
+    }
+
+    .humidity,
+    .windspeed {
+        padding: 13px 10px;
+        border-radius: 14px;
+    }
+
+    .humidity span,
+    .windspeed span {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 360px) {
+    #searchButton {
+        padding: 0 12px;
+        font-size: 0.8rem;
+    }
+
+    .temperature h2 {
+        font-size: 2.6rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
