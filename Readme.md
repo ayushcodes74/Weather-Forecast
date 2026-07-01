@@ -4,15 +4,7 @@ A simple and responsive Weather Forecast web application built using **HTML, CSS
 
 ## 🚀 Live Demo
 
-🔗 https://your-vercel-link.vercel.app
-
-## 📸 Screenshot
-
-> Add a screenshot of your project here.
-
-Example:
-
-![Weather App Screenshot](screenshot.png)
+🔗 https://weather-forecast-smoky.vercel.app/
 
 ---
 
@@ -32,13 +24,13 @@ Example:
 
 ## 🛠️ Technologies Used
 
-- HTML5
-- CSS3
-- JavaScript (ES6)
+- HTML
+- CSS
+- JavaScript 
 - Fetch API
 - OpenWeather API
 
----
+
 
 ## 📚 What I Learned
 
@@ -64,7 +56,6 @@ Weather-Forecast-App/
 ├── index.html
 ├── style.css
 ├── script.js
-├── screenshot.png
 └── README.md
 ```
 
@@ -102,9 +93,9 @@ https://openweathermap.org/api
 
 **Ayush Raj**
 
-GitHub: https://github.com/yourusername
+GitHub: https://github.com/ayushcodes74/Weather-Forecast
 
-LinkedIn: https://linkedin.com/in/yourprofile
+LinkedIn: https://www.linkedin.com/in/ayush-raj-1874a9407/
 
 ---
 
